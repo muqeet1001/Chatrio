@@ -6,11 +6,13 @@ const router = require('./routes/authRoutes.js')
 const authMiddleware = require('./middleware/authMiddleware.js')
 const cookieParser = require('cookie-parser')
 const organizationRoutes = require('./routes/organizationRoutes.js')
+const boardsRoutes = require('./routes/boards.js')
 const app = express()
 app.use(express.json())
 app.use(cookieParser())
 app.use('/auth', router)
 app.use('/',organizationRoutes)
+app.use('/',boardsRoutes)
 
 app.listen(3000, () => {
     connectdb()
