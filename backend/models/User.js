@@ -12,4 +12,4 @@ const UserSchema = mongoose.Schema({
 })
 
 const Usermodel = mongoose.model('User',UserSchema)
-module.exports = Usermodel
+module.exports = Usermodel //this is the model for the user collection in the database

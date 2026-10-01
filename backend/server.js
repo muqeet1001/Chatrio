@@ -7,13 +7,14 @@ const authMiddleware = require('./middleware/authMiddleware.js')
 const cookieParser = require('cookie-parser')
 const organizationRoutes = require('./routes/organizationRoutes.js')
 const boardsRoutes = require('./routes/boards.js')
+const issueRoutes = require('./routes/IssueRoutes.js')
 const app = express()
 app.use(express.json())
 app.use(cookieParser())
 app.use('/auth', router)
 app.use('/',organizationRoutes)
 app.use('/',boardsRoutes)
-
+app.use('/',issueRoutes)
 app.listen(3000, () => {
     connectdb()
     console.log("Chatrio backend is running");
